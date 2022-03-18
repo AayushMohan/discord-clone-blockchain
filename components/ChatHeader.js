@@ -9,7 +9,7 @@ import at from "../assets/icons/at.svg";
 import styles from "../styles/chatHeader.module.css";
 import ethLogo from "../assets/eth.png";
 import { useContext } from "react";
-import { DiscordContext } from "../context/context";
+// import { DiscordContext } from "../context/context";
 
 const ChatHeader = () => {
   return <div></div>;

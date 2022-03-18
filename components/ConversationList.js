@@ -12,7 +12,7 @@ import DmCard from "./DmCard";
 const dummyDms = [
   {
     id: 1,
-    name: "Aayush",
+    name: "Quinn",
     avatar: avatar1,
   },
   {
