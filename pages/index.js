@@ -5,10 +5,7 @@ export default function Home() {
   return (
     <div className={styles.wrapper}>
       <Sidebar />
-      <div className={styles.main}>
-        {/* conversationList */}
-        {/* Chat view */}
-      </div>
+      <div className={styles.main}>conversationList Chat view</div>
     </div>
   );
 }
