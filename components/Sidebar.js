@@ -1,5 +1,5 @@
 import styles from "../styles/sidebar.module.css";
-import { useEffects, useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 import avatar1 from "../assets/avatar-1.webp";
