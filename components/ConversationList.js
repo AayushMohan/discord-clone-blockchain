@@ -7,6 +7,7 @@ import avatar1 from "../assets/avatar-1.webp";
 import avatar2 from "../assets/avatar-2.png";
 import avatar3 from "../assets/avatar-3.webp";
 import avatar4 from "../assets/avatar-4.webp";
+import DmCard from "./DmCard";
 
 const dummyDms = [
   {
@@ -65,7 +66,16 @@ const ConversationList = () => {
         </div>
         <div className={styles.dmTitle}>DIRECT MESSAGES</div>
         {dms.map((dm, index) => (
-          <div>dm card</div>
+          <DmCard
+            key={index}
+            name={dm.name}
+            id={dm.id}
+            avatar={
+              dm.avatar ||
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3OCSMFIW5fZ3vSN6yGpD-w-6SsL2_ZPA_sw&usqp=CAU"
+            }
+            status="online"
+          />
         ))}
       </div>
     </div>

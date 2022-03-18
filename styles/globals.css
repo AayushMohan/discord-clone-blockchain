@@ -21,7 +21,7 @@
 }
 
 body {
-  background: var(--deep-grey);
-  font-size: var(--font-size);
-  color: var(--grey-text-color);
+  background: #202225;
+  font-size: 0.95rem;
+  color: #dcddde;
 }
