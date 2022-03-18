@@ -34,7 +34,18 @@ const Sidebar = () => {
   const router = useRouter();
   const [channels, setChannels] = useState(dummyChannels);
 
-  return <div className={styles.wrapper}>Sidebar</div>;
+  return (
+    <div className={styles.wrapper}>
+      {channels.map((channel, index) => (
+        <RoomAvatar
+          key={index}
+          id={channel.roomId}
+          avatar={channel.avatar}
+          name={channel.roomName}
+        />
+      ))}
+    </div>
+  );
 };
 
 export default Sidebar;
