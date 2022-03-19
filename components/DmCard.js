@@ -1,8 +1,13 @@
 import Image from "next/image";
 import styles from "../styles/dmCard.module.css";
+import { useRouter } from "next/router";
 
 const DmCard = ({ name, status, avatar, id }) => {
-  const changeUrl = () => {};
+  const router = useRouter();
+
+  const changeUrl = () => {
+    router.push(`?conversations=${id}&name=${name}`);
+  };
 
   return (
     <div className={styles.dmCard} onClick={changeUrl}>
