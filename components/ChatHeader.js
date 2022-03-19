@@ -12,7 +12,14 @@ import { useContext } from "react";
 // import { DiscordContext } from "../context/context";
 
 const ChatHeader = () => {
-  return <div></div>;
+  return (
+    <div className={styles.chatHeader}>
+      <div className={styles.roomNameContainer}>
+        <Image height={28} width={28} src={at} className={styles.svg} alt="" />
+        <h3 className={styles.title}>Room Name</h3>
+      </div>
+    </div>
+  );
 };
 
 export default ChatHeader;
