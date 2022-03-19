@@ -1,6 +1,7 @@
 import styles from "../styles/chatView.module.css";
 import ChatHeader from "./ChatHeader";
 import { useContext } from "react";
+import MessageForm from "./MessageForm";
 // import { DiscordContext } from "../context/context";
 
 const ChatView = () => {
@@ -8,6 +9,7 @@ const ChatView = () => {
     <div className={styles.chatView}>
       <ChatHeader />
       <div className={styles.messageContainer}></div>
+      <MessageForm />
     </div>
   );
 };
