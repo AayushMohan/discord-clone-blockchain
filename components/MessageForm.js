@@ -22,10 +22,10 @@ const MessageForm = () => {
         <input
           type="text"
           className={styles.chatInput}
-          value={messageText}
-          disabled={currentAccount.name}
-          onChange={(e) => setMessageText(e.target.value)}
-          placeholder={placeholder}
+          // value={messageText}
+          // disabled={currentAccount.name}
+          // onChange={(e) => setMessageText(e.target.value)}
+          // placeholder={placeholder}
         />
 
         <div className={styles.svgContainer}>
