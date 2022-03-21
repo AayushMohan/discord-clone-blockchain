@@ -25,6 +25,22 @@ export const DiscordProvider = ({ children }) => {
   const [messageText, setMessageText] = useState("");
   const [currentUser, setCurrentUser] = useState();
 
+  const checkIfWalletIsConnected = async () => {
+    if (!window.ethereum) return;
+    try {
+      const addressArray = await window.ethereum.request({
+        method: "eth_accounts",
+      });
+      if (addressArray.length > 0) {
+        setCurrentAccount(addressArray[0]);
+        createUserAccount(addressArray[0]);
+      } else {
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <DiscordContext.Provider value={{}}>{children}</DiscordContext.Provider>
   );
