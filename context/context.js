@@ -15,3 +15,17 @@ const reducer = (state, action) => {
     console.error(error);
   }
 };
+
+export const DiscordProvider = ({ children }) => {
+  const router = useRouter();
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const [currentAccount, setCurrentAccount] = useState("");
+  const [roomName, setRoomName] = useState("");
+  const [placeholder, setPlaceholder] = useState("Message...");
+  const [messageText, setMessageText] = useState("");
+  const [currentUser, setCurrentUser] = useState();
+
+  return (
+    <DiscordContext.Provider value={{}}>{children}</DiscordContext.Provider>
+  );
+};
