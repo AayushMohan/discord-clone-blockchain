@@ -18,7 +18,7 @@ export default async (req, res) => {
   try {
     await client.createIfNotExists(conversationDoc);
 
-    res.send(200).send("Successful");
+    res.status(200).send("Successful");
   } catch (error) {
     console.error(error);
     res.status(500).send(error);

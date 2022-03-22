@@ -1,9 +1,9 @@
 import { client } from "../../lib/client";
 
 const query = `*[_type == "conversations" && isDm==false]{
- roomId,
- roomName,
- "avatar": image.asset->url,
+  roomId,
+  roomName,
+  "avatar": image.asset->url
 }`;
 
 export default async (req, res) => {

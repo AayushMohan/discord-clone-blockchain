@@ -1,9 +1,9 @@
 import { client } from "../../lib/client";
 
 export default async (req, res) => {
-  const query = `*[_type == "users" && walletAddress == "${res.query.account}"]{
-   name,
-   "avatar": profileImage.asset->url,
+  const query = `*[_type == "users" && walletAddress == "${req.query.account}"]{
+    name,
+    "avatar": profileImage.asset->url
   }`;
 
   try {

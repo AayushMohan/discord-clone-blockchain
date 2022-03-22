@@ -1,11 +1,11 @@
 import { client } from "../../lib/client";
 
-const query = `*[_type == "conversations" && isDm==false]{
- "conversations": userReference->{
-  name,
-  walletAddress,
-  "image": profileImage.assets->url,
- } 
+const query = `*[_type == "conversations" && isDm==true]{
+  "conversation": userReference->{
+    name,
+    walletAddress,
+    "image": profileImage.asset->url
+  }
 }`;
 
 export default async (req, res) => {
@@ -19,6 +19,7 @@ export default async (req, res) => {
         id: item.conversation.walletAddress,
       };
     });
+
     res.status(200).send(response);
   } catch (error) {
     console.error(error);

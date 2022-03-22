@@ -6,7 +6,7 @@ const DmCard = ({ name, status, avatar, id }) => {
   const router = useRouter();
 
   const changeUrl = () => {
-    router.push(`?conversations=${id}&name=${name}`);
+    router.push(`?conversation=${id}&name=${name}`);
   };
 
   return (

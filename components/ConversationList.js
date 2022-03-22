@@ -3,37 +3,20 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import friends from "../assets/icons/friends.svg";
 import nitro from "../assets/icons/nitro.svg";
-import avatar1 from "../assets/avatar-1.webp";
-import avatar2 from "../assets/avatar-2.png";
-import avatar3 from "../assets/avatar-3.webp";
-import avatar4 from "../assets/avatar-4.webp";
 import DmCard from "./DmCard";
 
-const dummyDms = [
-  {
-    id: 1,
-    name: "Quinn",
-    avatar: avatar1,
-  },
-  {
-    id: 2,
-    name: "David",
-    avatar: avatar2,
-  },
-  {
-    id: 3,
-    name: "Amaanath",
-    avatar: avatar3,
-  },
-  {
-    id: 4,
-    name: "Frankie",
-    avatar: avatar4,
-  },
-];
-
 const ConversationList = () => {
-  const [dms, setDms] = useState(dummyDms);
+  const [dms, setDms] = useState([]);
+
+  useEffect(async () => {
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/getdms`);
+
+      setDms(await response.json());
+    } catch (error) {
+      console.error(error);
+    }
+  }, []);
   return (
     <div className={styles.conversations}>
       <div className={styles.conversationListTop}>
@@ -50,7 +33,7 @@ const ConversationList = () => {
               alt="friends"
             />
           </div>
-          <p>Friends</p>
+          <p>Fiends</p>
         </div>
         <div className={styles.elementsContainer}>
           <div className={styles.svgContainer}>
