@@ -25,6 +25,12 @@ export const DiscordProvider = ({ children }) => {
   const [messageText, setMessageText] = useState("");
   const [currentUser, setCurrentUser] = useState();
 
+  useEffect(() => {
+    checkIfWalletIsConnected();
+  }, []);
+
+  const createUserAccount = async () => {};
+
   const checkIfWalletIsConnected = async () => {
     if (!window.ethereum) return;
     try {
@@ -39,9 +45,40 @@ export const DiscordProvider = ({ children }) => {
     } catch (error) {
       console.error(error);
     }
+
+    const connectWallet = async () => {
+      if (!window.ethereum) return;
+      try {
+        const addressArray = await widow.ethereum.request({
+          method: "eth_requestAccounts",
+        });
+
+        if (addressArray.length > 0) {
+          setCurrentAccount(addressArray[0]);
+          createUserAccount(addressArray[0]);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
   };
 
   return (
-    <DiscordContext.Provider value={{}}>{children}</DiscordContext.Provider>
+    <DiscordContext.Provider
+      value={{
+        currentAccount,
+        roomName,
+        setRoomName,
+        placeholder,
+        messageText,
+        setMessageText,
+        state,
+        gun,
+        connectWallet,
+        currentUser,
+      }}
+    >
+      {children}
+    </DiscordContext.Provider>
   );
 };
